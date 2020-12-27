@@ -1,6 +1,6 @@
+//4) searching node in linked list
 using namespace std;
 
-//searching node in linked list
 #include<iostream>
 struct node
 {

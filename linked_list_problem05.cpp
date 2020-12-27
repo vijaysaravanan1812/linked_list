@@ -1,4 +1,4 @@
-//Detect the loop in linked list 
+//5) Detect the loop in linked list 
 //Floyd's cycle
 using namespace std;
 #include<iostream>
@@ -29,32 +29,27 @@ int detectloop(node *head)
 
 int main()
 {
-    node *first = NULL;
-    node *second =  NULL;
-    node *third = NULL;
-    node *fourth =NULL;
-    node *fifth = NULL;
+   printf("Enter the element for creating linked list\n");
+    node *first = (struct node *) malloc(sizeof(struct node));
+    node *second =  (struct node *)malloc(sizeof(struct node));
+    node *third =   (struct node *)malloc(sizeof(struct node));
+    node *fourth = (struct node *) malloc(sizeof(struct node));
+    node *fifth =  (struct node *) malloc(sizeof(struct node));
     
-    first = new node();
-    second = new node();
-    third = new node();
-    fourth = new node();
-    fifth = new node();
-
     cin>>first ->data;
-    first ->next = second;
+    first ->next =second;
 
     cin>>second ->data;
-    second ->next = third;
+    second ->next = third;  
 
     cin>>third ->data;
-    third ->next = fourth;
+    third ->next = fourth; 
 
     cin>>fourth ->data;
-    fourth ->next =fifth;
+    fourth ->next = fifth; 
 
     cin>>fifth ->data;
-    fifth -> next = second;
+    fifth ->next = fourth; 
 
     if (detectloop(first) == 1)
     {

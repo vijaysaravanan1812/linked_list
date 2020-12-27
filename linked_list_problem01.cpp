@@ -1,4 +1,5 @@
-//linked list problem 1) inserting elements
+//linked list problem 
+//1) inserting elements and use local declaration
 using namespace std;
 
 #include<iostream>
@@ -86,32 +87,30 @@ int main()
 {
     int position;
     
-    //Creating four nodes
-    node *first = NULL;
-    node *second = NULL;
-    node *third = NULL;
-    node *fourth = NULL;
-
-    first = new node();
-    second = new node();
-    third = new node();
-    fourth =  new node();
-
+   printf("Enter the element for creating linked list\n");
+    node *first = (struct node *) malloc(sizeof(struct node));
+    node *second =  (struct node *)malloc(sizeof(struct node));
+    node *third =   (struct node *)malloc(sizeof(struct node));
+    node *fourth = (struct node *) malloc(sizeof(struct node));
+    node *fifth =  (struct node *) malloc(sizeof(struct node));
+    
     cin>>first ->data;
-    first ->next = second;
+    first ->next =second;
 
     cin>>second ->data;
-    second ->next = third;
+    second ->next = third;  
 
     cin>>third ->data;
-    third ->next = fourth;
-
+    third ->next = fourth; 
 
     cin>>fourth ->data;
-    fourth ->next = NULL;
+    fourth ->next = fifth; 
+
+    cin>>fifth ->data;
+    fifth ->next = NULL; 
 
     printlist(first);
-    cout<<"Enter the position ";
+    cout<<"Enter the position\t";
     cin>>position;
  
     

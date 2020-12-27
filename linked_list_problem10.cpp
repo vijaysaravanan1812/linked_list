@@ -1,3 +1,4 @@
+//10) geting nth index element
 
 using namespace std;
 
@@ -57,20 +58,29 @@ int main()
     char cho; //Ask choice
     int index;
     
-    node *first = NULL;   node *newnode;
-    first = new node();   newnode = new node();  
+   printf("Enter the element for creating linked list\n");
+    node *first = (struct node *) malloc(sizeof(struct node));
+    node *second =  (struct node *)malloc(sizeof(struct node));
+    node *third =   (struct node *)malloc(sizeof(struct node));
+    node *fourth = (struct node *) malloc(sizeof(struct node));
+    node *fifth =  (struct node *) malloc(sizeof(struct node));
     
     cin>>first ->data;
-    first ->next = NULL;
-  
-    do
-    {
-        insert(first);
-        cout<<"Do you add one more press Y or else press N";
-        cin>>cho;
+    first ->next =second;
 
-    } while (cho != 'N');
-    cout<<"Given linked list";
+    cin>>second ->data;
+    second ->next = third;  
+
+    cin>>third ->data;
+    third ->next = fourth; 
+
+    cin>>fourth ->data;
+    fourth ->next = fifth; 
+
+    cin>>fifth ->data;
+    fifth ->next = NULL; 
+  
+    cout<<"Given linked list"<<"\t";
     printlist(first);
     cout<<"Enter the index that you want"<<"\t";
     cin>>index;

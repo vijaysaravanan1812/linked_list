@@ -1,4 +1,4 @@
-//Delete the duplicate element in sorted linked list
+//7) Delete the duplicate element in sorted linked list
 using namespace std;
 
 #include<iostream>
@@ -56,35 +56,30 @@ void delete_duplicates(node *head)
 
 int main()
 {
-    node *first = NULL;
-    node *second = NULL;
-    node *third =NULL;
-    node *fourth = NULL;
-    node *fifth =NULL;
-
-    first = new node();
-    second = new node();
-    third = new node();
-    fourth = new node();
-    fifth = new node();
-
+   printf("Enter the element for creating linked list\n");
+    node *first = (struct node *) malloc(sizeof(struct node));
+    node *second =  (struct node *)malloc(sizeof(struct node));
+    node *third =   (struct node *)malloc(sizeof(struct node));
+    node *fourth = (struct node *) malloc(sizeof(struct node));
+    node *fifth =  (struct node *) malloc(sizeof(struct node));
+    
     cin>>first ->data;
     first ->next =second;
 
     cin>>second ->data;
     second ->next = third;  
 
-     cin>>third ->data;
+    cin>>third ->data;
     third ->next = fourth; 
 
-     cin>>fourth ->data;
+    cin>>fourth ->data;
     fourth ->next = fifth; 
 
     cin>>fifth ->data;
     fifth ->next = NULL; 
-
-    
-
+    printf("Given linked list\n");
+    printlist(first);
+    printf("After Removing duplicates\n");
     delete_duplicates(first);
     printlist(first);
   

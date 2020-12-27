@@ -1,6 +1,7 @@
+// 3) reversing linked list 
  using namespace std;
 
-//reversing linked list 
+
 #include<iostream>
 struct node
 {
@@ -29,54 +30,41 @@ int length(node *temp)
     }
     return i;
 }
-void reverse(node *head)
+node* reverse(node *head)
 { 
-    int i=1;
-    node *temp = NULL;
-    temp = new node();
-
-    node *previous_node = NULL;
+    node* previous_node = NULL;
     previous_node = new node();
-    
-    node *next_node =NULL;
-    next_node = new node();
-    next_node = head;
 
-    node *current_node = NULL;
+    node* current_node = NULL;
     current_node = new node();
-    current_node = head;
 
+    node* next_node =   NULL;
+    next_node = new node();
+
+    current_node = head;
+    next_node = head;
     while (next_node != NULL)
     {
-
         next_node = next_node ->next;
-        current_node->next = previous_node;
+        current_node ->next = previous_node;
         previous_node = current_node;
         current_node = next_node;
     }
     head = previous_node;
-    temp = head;
+    printlist(head);
+    return head;
 
-    while (temp != NULL)
-    {
-        if (i == length(head))
-            break;
-        cout<<temp ->data<<" ";
-        temp = temp ->next;
-        i++;
-
-    }
 }
 
 int main()
 {
-    node *first = NULL;
+    node *first = NULL, *temp = NULL;
     node *second = NULL;
     node *third = NULL;
     node *fourth = NULL;
     node *fifth = NULL;
 
-    first = new node();
+    first = new node();temp = new node();
     second = new node();
     third = new node();
     fourth = new node();
@@ -101,7 +89,10 @@ int main()
     printlist(first);cout<<"\n";
 
     cout<<"After reversing"<<"\t";
-    reverse(first);cout<<"\n";
+    temp = first;
+    first = reverse(temp);
+    cout<<"\n";
+    printlist(first);
  
     
     return 0;
