@@ -110,7 +110,7 @@ int main()
     fifth ->next = NULL; 
 
     printlist(first);
-    cout<<"Enter the position\t";
+    cout<<"Enter the position\t ";
     cin>>position;
  
     
