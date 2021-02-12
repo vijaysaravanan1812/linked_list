@@ -23,7 +23,7 @@ void printlist(node *temp)
 
 
 
-void rotate_list(node *head)
+node* rotate_list(node *head)
 {
     int n;
     cout<<"How many rotations"<<"\t";
@@ -32,8 +32,6 @@ void rotate_list(node *head)
     for (int i = 0; i < n; i++)
     {
         node *current_node = NULL,*prev_node = NULL;
-        current_node = new node();
-        prev_node = new node();
         current_node = head;
         while (current_node -> next != NULL)
         {
@@ -44,7 +42,7 @@ void rotate_list(node *head)
         current_node ->next = head;
         head = current_node;
     }
-    printlist(head);
+    return head;
  
 
 }
@@ -74,6 +72,6 @@ int main()
     fifth ->next = NULL; 
     
     printlist(first);
-    rotate_list(first);
-  
+    first = rotate_list(first);
+    printlist(first);
 }

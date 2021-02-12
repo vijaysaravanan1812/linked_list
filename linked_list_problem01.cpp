@@ -36,11 +36,11 @@ void printlist(node *temp)
 //This function is to insert the element at last in linked list
 void insert_end(node *temp)
 {
-    node *nextnode;
-    nextnode = new node();
+    node *nextnode = new node();
     cout<<"your new element"<<"\t"; 
     cin>>nextnode -> data;
     nextnode ->next = NULL;
+    
     while ( temp ->next != NULL)
     {
         temp = temp ->next;
@@ -51,30 +51,24 @@ void insert_end(node *temp)
 //This function to insert element at first
 node* insert_first(node* temp )
 {
-    node *newnode = NULL;
-    newnode = new node();
-
+    node *newnode = new node();
     cout<<"Your new element"<<"\t";
     cin>>newnode ->data;
-    newnode ->next = NULL;
     newnode ->next = temp;
     temp = newnode;
     return temp;
-    
 }
 
 //This function is to insert element at any position
 void insert(node *temp ,int position)
 {
-    int count=1;
-    node *newnode;  
-    newnode = new node();
+    node *newnode = new node();
     cout<<"your new element"<<"\t"; 
     cin>>newnode -> data;
-     
+
+    int count = 1;     
     while (count != position - 1)
     {
-
         temp = temp ->next;
         count++;
     } 
@@ -85,39 +79,39 @@ void insert(node *temp ,int position)
 
 int main()
 {
-    int position;
     
-   printf("Enter the element for creating linked list\n");
     node *first = (struct node *) malloc(sizeof(struct node));
     node *second =  (struct node *)malloc(sizeof(struct node));
     node *third =   (struct node *)malloc(sizeof(struct node));
     node *fourth = (struct node *) malloc(sizeof(struct node));
     node *fifth =  (struct node *) malloc(sizeof(struct node));
     
-    cin>>first ->data;
+    first ->data = 2;
     first ->next =second;
 
-    cin>>second ->data;
+    second ->data = 4;
     second ->next = third;  
 
-    cin>>third ->data;
+    third ->data = 6;
     third ->next = fourth; 
 
-    cin>>fourth ->data;
+    fourth ->data = 8;
     fourth ->next = fifth; 
 
-    cin>>fifth ->data;
+    fifth ->data = 10;
     fifth ->next = NULL; 
 
+    printf("Given linked list\n");
     printlist(first);
+
+    int position;
     cout<<"Enter the position\t ";
     cin>>position;
  
     
     if (position == 1)
     {
-        node* temp;temp = new node();
-        temp = first;
+        node* temp = first;
         first = insert_first(temp);
         printlist(first);
     }

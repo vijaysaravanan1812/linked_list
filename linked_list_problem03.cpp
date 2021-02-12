@@ -32,14 +32,9 @@ int length(node *temp)
 }
 node* reverse(node *head)
 { 
-    node* previous_node = NULL;
-    previous_node = new node();
-
-    node* current_node = NULL;
-    current_node = new node();
-
-    node* next_node =   NULL;
-    next_node = new node();
+    node* previous_node = NULL ;
+    node* current_node ;
+    node* next_node ;
 
     current_node = head;
     next_node = head;
@@ -51,38 +46,31 @@ node* reverse(node *head)
         current_node = next_node;
     }
     head = previous_node;
-    printlist(head);
     return head;
 
 }
 
 int main()
 {
-    node *first = NULL, *temp = NULL;
-    node *second = NULL;
-    node *third = NULL;
-    node *fourth = NULL;
-    node *fifth = NULL;
+    node *first = new node(), *temp = new node();
+    node *second = new node();
+    node *third = new node();
+    node *fourth = new node();
+    node *fifth = new node();
 
-    first = new node();temp = new node();
-    second = new node();
-    third = new node();
-    fourth = new node();
-    fifth = new node();
-
-    cin>>first ->data;
+    first ->data = 2;
     first ->next = second;
 
-    cin>>second ->data;
+    second ->data = 4;
     second ->next = third;
 
-    cin>>third ->data;
+    third ->data = 6;
     third ->next = fourth;
 
-    cin>>fourth ->data;
+    fourth ->data = 8;
     fourth ->next = fifth;
 
-    cin>>fifth -> data;
+    fifth -> data = 10;
     fifth ->next = NULL;
 
     cout<<"Given list is"<<"\t";

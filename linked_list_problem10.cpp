@@ -23,17 +23,18 @@ void printlist(node *temp)
 
 int get_Nth_node(node *head ,int index)
 {
-    node *temp =NULL;int count =0;
+    node *temp =NULL;int count = 1;
     temp = new node();
     temp = head;
-    while (temp ->next != 0)
+    while (temp  != NULL)
     {
-        temp = temp ->next;
+       
         if (count == index)
         {
             return temp ->data;
         }
         count++;
+        temp = temp ->next;
     }
     
 }

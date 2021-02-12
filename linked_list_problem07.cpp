@@ -33,6 +33,7 @@ void delete_duplicates(node *head)
             if (current_node ->data == current_node ->next ->next->data )
             {
                 temp = current_node ->next ->next ->next;
+                free(current_node->next->next);
                 current_node ->next = temp;
             }
             else

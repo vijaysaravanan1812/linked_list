@@ -1,7 +1,7 @@
-//2) Deleting node from linked list problem 
-using namespace std;
-
+//2) Deleting node from linked list problem for given index
 #include<iostream>
+
+using namespace std;
 struct node
 {
     int data;
@@ -33,15 +33,14 @@ void printlist(node *temp)
 void delete_node_at_mid(node *temp,int pos)
 {
     int i=1;
-    node *nextnode = NULL;
-    nextnode = new node();
+    node *nextnode;
     while (i < pos -1)
     {
         temp = temp ->next;
         i++;
     }
     nextnode = temp ->next;
-    temp -> next =nextnode ->next;
+    temp -> next = nextnode ->next;
 
     free(nextnode);
 } 
@@ -49,8 +48,7 @@ void delete_node_at_mid(node *temp,int pos)
 //Function to delecting node from last
 void delete_node_at_last(node *temp)
 {
-    node *previous_node =NULL;
-    previous_node = new node();
+    node *previous_node ;
     
     while (temp ->next != NULL)
     {
@@ -64,8 +62,7 @@ void delete_node_at_last(node *temp)
 //Function to delete node at begining 
 node* delete_node_at_first(node *head)
 {
-    node *temp = NULL;
-    temp = new node();
+    node *temp = head;
 
     temp = head;
     head = head ->next;
@@ -75,7 +72,8 @@ node* delete_node_at_first(node *head)
 
 int main()
 {
-    int pos;
+
+    // creating linked list
     node *first = NULL;
     node *second = NULL;
     node *third = NULL;
@@ -88,32 +86,31 @@ int main()
     fourth = new node();
     fifth = new node();
 
-    cin>>first ->data;
+    first ->data = 2;
     first ->next = second;
 
-    cin>>second ->data;
+    second ->data = 4;
     second ->next = third;
 
-    cin>>third ->data;
+    third ->data = 6;
     third ->next = fourth;
 
-    cin>>fourth ->data;
+    fourth ->data = 8;
     fourth ->next = fifth;
 
-    cin>>fifth -> data;
+    fifth ->data  = 10;
     fifth ->next = NULL;
 
     cout<<"Given linked list"<<" ";
     printlist(first);
  
-    cout<<"Enter your position";
+    int pos;
+    cout<<"Enter your position"<<" ";
     cin>>pos;
     if (pos == 1)
     {
         cout<<"First node deleted"<<" ";
-        node* temp = NULL;
-        temp = new node();
-
+        node* temp;
         temp = first;
         first = delete_node_at_first(temp);
         printlist(first);
