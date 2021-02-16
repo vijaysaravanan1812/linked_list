@@ -33,8 +33,6 @@ void pair_wise_swap(node *head)
         temp ->next ->data = temp1;
         temp = temp ->next ->next;
     }
-    
-
 }
 
 
