@@ -36,6 +36,7 @@ int main()
     node *fourth = (struct node *) malloc(sizeof(struct node));
     node *fifth =  (struct node *) malloc(sizeof(struct node));
     
+    
     cin>>first ->data;
     first ->next =second;
 
